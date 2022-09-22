@@ -1,0 +1,90 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat App</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="chat-section d-none">
+        <header class="mdc-top-app-bar">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <span class="material-icons">chat</span>
+                    <span class="mdc-top-app-bar__title">Notion-IT Chat</span>
+                </section>
+            </div>
+        </header>
+        <main class="mdc-top-app-bar--fixed-adjust chat-box" id="chat-box">
+        </main>
+        <div class="footer">
+            <label class="mdc-text-field mdc-text-field--filled width100 lblinput mdc-text-field--no-label">
+                <span class="mdc-text-field__ripple"></span>
+                <input class="mdc-text-field__input" type="text" aria-labelledby="message" aria-label="Label" id="message"
+                    name="message" placeholder="Type Your Message Here..." aria-label="Label">
+                <span class="mdc-line-ripple"></span>
+                <button class="mdc-button foo-button" id="sendMessageBtn">
+                    <div class="mdc-button__ripple"></div>
+                    <span class="mdc-button__label"><span class="material-icons">send</span></span>
+                </button>
+            </label>
+            
+        </div>
+    </div>
+    <div class="mdc-dialog mdc-dialog--open" id="chat-popup">
+        <div class="mdc-dialog__container">
+            <div class="mdc-dialog__surface" role="alertdialog" aria-modal="true" aria-labelledby="my-dialog-title"
+                aria-describedby="my-dialog-content">
+                <!-- Title cannot contain leading whitespace due to mdc-typography-baseline-top() -->
+                <h2 class="mdc-dialog__title" id="my-dialog-title">Chat
+                </h2>
+                <div class="mdc-dialog__content" id="my-dialog-content">
+                    <label class="mdc-text-field mdc-text-field--filled width100 lblinput mdc-text-field--no-label">
+                        <span class="mdc-text-field__ripple"></span>
+                        <input class="mdc-text-field__input" type="text" aria-labelledby="first_name" id="first_name" placeholder="First Name" aria-label="Label">
+                        <span class="mdc-line-ripple"></span>
+                    </label>
+                    <label class="mdc-text-field mdc-text-field--filled width100 lblinput mdc-text-field--no-label">
+                        <span class="mdc-text-field__ripple"></span>
+                        <input class="mdc-text-field__input" type="text" aria-labelledby="last_name" aria-label="Label" id="last_name" placeholder="Last Name" aria-label="Label">
+                        <span class="mdc-line-ripple"></span>
+                    </label>
+                    
+                    <button class="mdc-button mdc-button--raised mt-2" id="registerBtn">
+                        <span class="mdc-button__label">Enter</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="mdc-dialog__scrim"></div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"
+        integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.10.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.10.0/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.10.0/firebase-auth-compat.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        var user_id = user_name = "";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyDYQxoFMDV5gKie-E8zg_lz6CCXHcYOvcM",
+            authDomain: "notion-it-chat.firebaseapp.com",
+            projectId: "notion-it-chat",
+            storageBucket: "notion-it-chat.appspot.com",
+            messagingSenderId: "432618414673",
+            appId: "1:432618414673:web:0ec827619226dae0f0ce70"
+        };
+
+        const app = firebase.initializeApp(firebaseConfig);
+        const db = app.firestore();
+        const auth = app.auth();
+        
+    </script>
+</body>
+</html>

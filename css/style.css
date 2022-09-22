@@ -1,0 +1,112 @@
+body{
+    background: #fff;
+}
+.mt-2{
+    margin-top: 2rem;
+}
+.width100{
+    width: 100%;
+}
+.lblinput{
+    margin-bottom: 10px;
+}
+.textright{
+    text-align: right;
+}
+.message-box{
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    background-color: #fff;
+}
+.d-none{
+    display: none;
+}
+.footer{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+#chat-box{
+    overflow-y: auto;
+    max-height: 550px;
+}
+
+.media {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    margin-top: 5px;
+        width: fit-content;
+}
+.media-body {
+    -ms-flex: 1;
+    flex: 1;
+}
+.bg-light {
+    background-color: #f8f9fa !important;
+}
+.rounded {
+    border-radius: 0.25rem !important;
+}
+.mb-2,
+.my-2 {
+    margin-bottom: 0.5rem !important;
+}
+.pt-2,
+.py-2 {
+    padding-top: 0.5rem !important;
+}
+.pb-2,
+.py-2 {
+    padding-bottom: 0.5rem !important;
+}
+.pr-3,
+.px-3 {
+    padding-right: 1rem !important;
+}
+.pl-3,
+.px-3 {
+    padding-left: 1rem !important;
+}
+.ml-3,
+.mx-3 {
+    margin-left: 1rem !important;
+}
+.mr-3,
+.my-3 {
+    margin-right: 1rem !important;
+}
+.rounded-circle {
+    border-radius: 50% !important;
+}
+.w-50 {
+    width: 50% !important;
+}
+.text-muted {
+    color: #6c757d !important;
+}
+.text-bold {
+    font-weight: bold !important;
+}
+.text-white {
+    color: #fff !important;
+}
+.bg-primary {
+    background-color: #007bff !important;
+}
+.ml-auto,
+.mx-auto {
+    margin-left: auto !important;
+}
+.mb-0,
+.my-0 {
+    margin-bottom: 0 !important;
+}
+.m-0 {
+    margin: 0 !important;
+}
