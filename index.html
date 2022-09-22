@@ -17,6 +17,9 @@
                     <span class="material-icons">chat</span>
                     <span class="mdc-top-app-bar__title">Notion-IT Chat</span>
                 </section>
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end" role="toolbar">
+                    <span class="mdc-top-app-bar__title mdc-top-app-bar__action-item mr-3" id="userName"></span>
+                </section>
             </div>
         </header>
         <main class="mdc-top-app-bar--fixed-adjust chat-box" id="chat-box">
@@ -82,8 +85,8 @@
         };
 
         const app = firebase.initializeApp(firebaseConfig);
-        const db = app.firestore();
-        const auth = app.auth();
+        // const db = app.firestore();
+        // const auth = app.auth();
         
     </script>
 </body>

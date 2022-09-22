@@ -27,16 +27,21 @@ $(document).on("click", "#registerBtn", function () {
             .then((ref) => {
                 user_id = ref.id;
                 user_name = first_name + " " + last_name
+                $("#userName").html('<span class="material-icons mr-3">account_circle</span>'+user_name);
+                getMessages();
                 $("#chat-popup").hide();
                 $(".chat-section").removeClass('d-none');
-                getMessages();
             });
 
     }
 });
-
 $(document).on("click", "#sendMessageBtn", function () {
     sendMessage();
+});
+$(document).on("keydown", '#message', function (event) {
+    if (event.which == 13) {
+        sendMessage();
+    }
 });
 
 function getMessages(){
@@ -81,9 +86,11 @@ function getMessages(){
                 
             }
             $("#chat-box").html(html);
+            
             $("#chat-box").animate({ scrollTop: $('#chat-box')[0].scrollHeight }, 1000);
         });
 }
+
 function sendMessage() {
     
     var message = $("#message").val();
@@ -97,49 +104,33 @@ function sendMessage() {
                 time: Date.now()
             })
             .then((ref) => {
-                var chat_id = ref.id;
-    
-                // var html = '<div class="message-box textright">\
-                //                 '+ message + '</div > ';
-                                
-                // $("#chat-box").append(html);
+                return ref.id;
             });
-    
     
         $("#message").val("");
     }
 }
 
-$(document).on("keydown", '#message', function (event) {
-    if (event.which == 13){
-        sendMessage();
-    }
-});
-
-
 function timeAgo(date) {
     var seconds = Math.floor((new Date() - date) / 1000);
 
-    var interval = seconds / 31536000;
+    date = new Date(date);
+    interval = seconds / 60;
 
     if (interval > 1) {
-        return Math.floor(interval) + " years";
-    }
-    interval = seconds / 2592000;
-    if (interval > 1) {
-        return Math.floor(interval) + " months";
-    }
-    interval = seconds / 86400;
-    if (interval > 1) {
-        return Math.floor(interval) + " days";
-    }
-    interval = seconds / 3600;
-    if (interval > 1) {
-        return Math.floor(interval) + " hours";
-    }
-    interval = seconds / 60;
-    if (interval > 1) {
-        return Math.floor(interval) + " minutes";
+        return formatDate(date);
     }
     return "Just Now";
 }
+
+function formatDate(date) {
+    var hours = date.getHours();
+    var minutes = date.getMinutes();
+    var ampm = hours >= 12 ? 'PM' : 'AM';
+    hours = hours % 12;
+    hours = hours ? hours : 12; // the hour '0' should be '12'
+    minutes = minutes < 10 ? '0' + minutes : minutes;
+    var strTime = hours + ':' + minutes + ' ' + ampm;
+    return date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear() + "  " + strTime;
+}
+

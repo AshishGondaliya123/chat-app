@@ -21,6 +21,10 @@ body{
     margin-bottom: 5px;
     background-color: #fff;
 }
+#userName{
+    display: flex;
+    align-items: center;
+}        
 .d-none{
     display: none;
 }
@@ -48,14 +52,10 @@ body{
     flex: 1;
 }
 .bg-light {
-    background-color: #f8f9fa !important;
+    background-color: #f2f2f2 !important;
 }
 .rounded {
     border-radius: 0.25rem !important;
-}
-.mb-2,
-.my-2 {
-    margin-bottom: 0.5rem !important;
 }
 .pt-2,
 .py-2 {
